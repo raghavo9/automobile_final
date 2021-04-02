@@ -6,8 +6,26 @@ use Pimcore\Model\DataObject\Exception\InheritanceParentNotFoundException;
 
 class ProductType extends \Pimcore\Model\DataObject\Objectbrick {
 
-protected $brickGetters = ['CombustionTruck','CoumbustionCar','ElectricCar','ElectricTruck'];
+protected $brickGetters = ['ElectricTruck','CombustionTruck','CoumbustionCar','ElectricCar'];
 
+
+protected $ElectricTruck = null;
+
+/**
+* @return \Pimcore\Model\DataObject\Objectbrick\Data\ElectricTruck|null
+*/
+public function getElectricTruck() { 
+   return $this->ElectricTruck; 
+}
+
+/**
+* @param \Pimcore\Model\DataObject\Objectbrick\Data\ElectricTruck $ElectricTruck
+* @return \Pimcore\Model\DataObject\Product\ProductType
+*/
+public function setElectricTruck ($ElectricTruck) {
+	$this->ElectricTruck = $ElectricTruck;
+	return $this;
+}
 
 protected $CombustionTruck = null;
 
@@ -60,24 +78,6 @@ public function getElectricCar() {
 */
 public function setElectricCar ($ElectricCar) {
 	$this->ElectricCar = $ElectricCar;
-	return $this;
-}
-
-protected $ElectricTruck = null;
-
-/**
-* @return \Pimcore\Model\DataObject\Objectbrick\Data\ElectricTruck|null
-*/
-public function getElectricTruck() { 
-   return $this->ElectricTruck; 
-}
-
-/**
-* @param \Pimcore\Model\DataObject\Objectbrick\Data\ElectricTruck $ElectricTruck
-* @return \Pimcore\Model\DataObject\Product\ProductType
-*/
-public function setElectricTruck ($ElectricTruck) {
-	$this->ElectricTruck = $ElectricTruck;
 	return $this;
 }
 
