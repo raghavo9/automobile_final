@@ -1,0 +1,3 @@
+key,parentID,published,brandName,brandDescription,brandLogo,isBrandActive
+importedBrand1,20,true,BrandName1,Brand DEscription1,carlogo01.jpeg,1
+importedBrand2,20,true,BrandName2,Brand DEscription2,carlogo01.jpeg,1

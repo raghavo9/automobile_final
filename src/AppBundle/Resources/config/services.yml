@@ -28,4 +28,4 @@ services:
     AppBundle\Command\:
         resource: '../../Command/*'
         tags: ['console.command']
-        
+
