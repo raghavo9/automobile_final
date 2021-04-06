@@ -29,3 +29,11 @@ services:
         resource: '../../Command/*'
         tags: ['console.command']
 
+
+    AppBundle\Security\Guard\WebserviceAuthenticator:
+        public: false
+        calls:
+            - [setLogger, ['@logger']]
+        tags:
+            - {name: monolog.logger, channel: security}
+

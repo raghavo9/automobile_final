@@ -1,0 +1,18 @@
+[
+	{
+		"key":"apiSavedCategory01",
+		"parentID":3,
+		"published":true,
+		"categoryName":"api_SavedCategory01",
+		"categoryDescription":"apiSavedCategoryDesciption01",
+		"isCategoryActive":1
+	},
+	{
+		"key":"apiSavedCategory02",
+		"parentID":3,
+		"published":true,
+		"categoryName":"api_SavedCategory02",
+		"categoryDescription":"apiSavedCategoryDesciption02",
+		"isCategoryActive":1 
+	}
+]

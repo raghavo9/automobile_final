@@ -1,0 +1,20 @@
+[
+	{
+		"key":"apiSavedBrand01",
+		"parentID":20,
+		"published":true,
+		"brandName":"api_SavedBrand01",
+		"brandDescription":"apiSavedBrandDesciption01",
+		"isBrandActive":1,
+		"brandLogo":"carlogo01.jpeg"
+	},
+	{
+		"key":"apiSavedBrand02",
+		"parentID":20,
+		"published":true,
+		"brandName":"api_SavedBrand02",
+		"brandDescription":"apiSavedBrandDesciption02",
+		"isBrandActive":1,
+		"brandLogo":"carlogo01.jpeg"
+	}
+]
