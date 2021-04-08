@@ -19,6 +19,10 @@ services:
 
     # Example event listener for objects
     
+
+    AppBundle\EventListener\airbagListener:
+        tags:
+            - { name: kernel.event_listener, event: pimcore.dataobject.preUpdate, method: onPreUpdate  }
     
     
               
