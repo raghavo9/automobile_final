@@ -68,6 +68,7 @@ class checkDataBrick extends AbstractCommand
             $prodbrand = $prod->getProductBrand();
             $prodcategory = $prod->getProductCategory()->__toString();
             $proddate = $prod->getProductLaunchDate();
+            $prodcol = $prod->getProductColour();
             
             //$images = $prod->getProductImages()->getproductImages();
 
@@ -77,14 +78,16 @@ class checkDataBrick extends AbstractCommand
             //    p_r($x);
             //    
             //}
-            p_r("product name : ".$name);
-            p_r("product_id : ".$prodid);
-            p_r("product price : ".$prodprice);
-            p_r("product brand : ".$prodbrand);
-            p_r("product category : ".$prodcategory);
-            p_r("product launch date : ".substr($proddate,0,9));
-            //p_r();
-            //p_r();
+            //p_r("product name : ".$name);
+            //p_r("product_id : ".$prodid);
+            //p_r("product price : ".$prodprice);
+            //p_r("product brand : ".$prodbrand);
+            //p_r("product category : ".explode("/",$prodcategory)[2]);
+            //p_r("product launch date : ".substr($proddate,0,9));
+//
+//            //p_r(explode("/",$prod->getProductCategory()->__toString())[2]);
+            //p_r($prodcol);
+            //p_r(substr($prod->getProductLaunchDate(),0,9));
             //p_r();
             //p_r();
 
@@ -98,6 +101,27 @@ class checkDataBrick extends AbstractCommand
         //    $_SERVER['REQUEST_URI']
         //  );
         //p_r($var);
+
+            $data = new \Pimcore\Model\DataObject\Product\Listing();
+            $temp = "a";
+            $tp = $temp."%";
+
+            $data->setCondition("lower(productName) LIKE ?", ["$tp"]);
+            p_r("helllo");
+            if(empty($data))
+            {
+                p_r("its empty");
+            }
+
+            //p_r($data);
+            foreach($data as $da)
+            {
+                p_r("data: : : ");
+                p_r($da->getProductName());
+            }
+
+            
+
     }
 
 

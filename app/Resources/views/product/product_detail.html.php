@@ -147,9 +147,8 @@ define("BASE", "http://pim.local");
 
 
   //#  -----------------------------------------------------------
-    $filter_url  = "http://pim.local/brand?";  
-    $pageLimit = 3;
-    $brandData = new \Pimcore\Model\DataObject\Brand\Listing();
+
+
     
     //$list = DataObject\Product::getById()
     if(isset($_GET["productID"]))
@@ -157,43 +156,64 @@ define("BASE", "http://pim.local");
         $product_id = $_GET["productID"];
         $product = DataObject\Product::getById($product_id);
 
-        $filter_url  = "http://pim.local/brand?name=".$name;
-        define("FBASE", $filter_url);
-
-        //echo $name;
-    }
-    //if(isset($_GET["date"]))
-    //{
-    //    $date = $_GET["date"];
-    //    $brandData->setOrder($date);
-    //    $brandData->setOrderKey("productLaunchDate");
-    //    $filter_url  = "http://pim.local/products?date=".$date;
-    //    define("FBASE", $filter_url);
-    //}
-    
-    
-
-    
-        
+   
+          
         
 ?>
 
 
-<div style="height:250px; background:#94e0de; margin:10px; border-radius:15px ;opacity: 0.8;">
+<div style="height:550px; background:#94e0de; margin:10px; border-radius:15px ;opacity: 0.8;">
    <div style="width: 73%; float:left;  margin-top:2px; margin-left:10px; width:70%;">
-		<h2> <?=$product->getBrandName(); ?> </h2>
-    	<h4> <?=$product->getBrandDescription(); ?> <h4>
+    <strong>Product Name : </strong><?=$product->getProductName(); ?> <br><br>
+    <strong>Product Description : </strong><?=$product->getProductDescription(); ?> <br><br>
+    <strong>Product SKU : </strong><?=$product->getProductSKU(); ?> <br><br>
+    <strong>Product Brand : </strong><?=$product->getProductBrand(); ?> <br><br>
+    <strong>Product Category : </strong><?=explode("/",$product->getProductCategory()->__toString())[2];?> <br><br>
+    <strong>Product Price : </strong><?=$product->getProductPrice()->__toString(); ?> <br><br>
+    <strong>Product Colour : </strong><?=$product->getProductColour(); ?> <br><br>
+    <strong>Product Launch Date : </s<trong><?=substr($product->getProductLaunchDate(),0,9) ?> <br><br>
+    <strong>Product Airbag Count : </s<trong><?=$product->getAirbagCount(); ?> <br><br>
+    <strong>Product Engine :  </strong><?=$product->getProductEngine(); ?> <br><br>
+    <strong>Product Length : </strong><?=$product->getProductLength()->__toString(); ?> <br><br>
+
+    <?php 
+
+    $arr = array();
+    $arr[0] = $product->getProductType()->getCoumbustionCar();
+    $arr[1] = $product->getProductType()->getCombustionTruck();
+    $arr[2] = $product->getProductType()->getElectricCar();
+    $arr[3] = $product->getProductType()->getElectricTruck();
+    $productType = "";
+    foreach($arr as $i)
+    {
+
+        if(!empty($i))
+        {
+            $productType = $i->getType();
+            break;
+        }
+    }
+
+    ?>
+
+
+     <strong>Product Type : </strong><?=$productType ?> <br><br>
+    
 
         
     </div>
-    <div style=" float:right;opacity:100%;width:20%; margin-top:10px">
-
-    
-    
-	</div>
     
 </div>
-       
+       <?php
+
+  }
+  else
+  {
+    echo "<h1 style=\"text-align: center; color:white;\">Please select a Product first from the products page .</h1>";
+  }
+
+
+       ?>
 
 <?php endif;
             

@@ -140,11 +140,18 @@ define("BASE", "http://pim.local");
     
     
     
-    
+
     <button onclick="location.href='http://pim.local/products?name=ASC'">Name <i class="fas fa-arrow-up"></i></button>
     <button onclick="location.href='http://pim.local/products?name=DESC'">Name <i class="fas fa-arrow-down"></i></button>
     <button onclick="location.href='http://pim.local/products?date=ASC'">Launch Date <i class="fas fa-arrow-up"></i></button>
     <button onclick="location.href='http://pim.local/products?date=DESC'">Launch Date <i class="fas fa-arrow-down"></i></button>
+
+    
+
+    <form method="get" action="/products">
+    <input type="text" id="search" name="search" placeholder="search...">
+    <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
 
     
     
@@ -186,7 +193,7 @@ define("BASE", "http://pim.local");
         $filter_url  = "http://pim.local/products?name=".$name;
         define("FBASE", $filter_url);
 
-        echo $name;
+        //echo $name;
     }
     if(isset($_GET["date"]))
     {
@@ -194,6 +201,14 @@ define("BASE", "http://pim.local");
         $productData->setOrder($date);
         $productData->setOrderKey("productLaunchDate");
         $filter_url  = "http://pim.local/products?date=".$date;
+        define("FBASE", $filter_url);
+    }
+    if(isset($_GET["search"]))
+    {
+        $search = $_GET["search"];
+        $temp = $search."%";
+        $productData->setCondition("lower(productName) LIKE ?",["$temp"]);
+        $filter_url  = "http://pim.local/products?search=".$search;
         define("FBASE", $filter_url);
     }
     if (isset($_GET["page"])) 
@@ -244,14 +259,14 @@ define("BASE", "http://pim.local");
         //echo $productType;
 ?>
 
-<div style="height:250px; background:#94e0de; margin:10px; border-radius:15px ;opacity: 0.8;">
+<div style="height:280px; background:#94e0de; margin:10px; border-radius:15px ;opacity: 0.8;">
    <div style="width: 73%; float:left;  margin-top:2px; margin-left:10px; width:70%;">
-		<h2> <?=$product->getProductName(); ?> </h2>
-    	<p> <?=$product->getProductDescription(); ?> </p>
-        <h3 > Launch Date <?=$product->getProductLaunchDate(); ?> </h3>
+		<strong> Product Name  <?=$product->getProductName(); ?> </strong><br><br>
+    <strong> Product Description</strong>	<p> <?=$product->getProductDescription(); ?> </p><br><br>
+        <strong> Launch Date </strong> <?=$product->getProductLaunchDate(); ?><br><br>
         
-    	<h3 > product type: <?= $productType ?> </h3>
-        <h3 > <?=$product->getProductPrice()->__toString(); ?> </h3>
+    	<strong> product type: </strong> <?= $productType ?><br><br>
+        <strong> Product price : </strong><?=$product->getProductPrice()->__toString(); ?>
 
         <?php
         $product_id = $product->getId();
@@ -261,8 +276,10 @@ define("BASE", "http://pim.local");
 	</div>
     <div style=" float:right;opacity:100%;width:20%; margin-top:10px">
 
-    
+    <!--
 		<img src="https://images-na.ssl-images-amazon.com/images/I/71ZtQnzOU4L._SL1500_.jpg" height=150px/>
+
+    -->
 
 	</div>
 </div>
@@ -282,7 +299,7 @@ define("BASE", "http://pim.local");
         $gotoPage = "";       
       
         if($page >= 2){   
-            //echo "<a href='http://bakery.local/productList?page=".($page-1)."'>  Prev </a>";   
+               
             echo "<a href='".$filter_url."&page=".($page-1)."'>  Prev </a>";
             
         }       
@@ -300,7 +317,7 @@ define("BASE", "http://pim.local");
 
         };     
         echo $gotoPage;
-        //$gotoPage ="";
+        
             
         if($page<$pageCount){   
             echo "<a href='".$filter_url."/&page=".($page+1)."'>  Next </a>";   
