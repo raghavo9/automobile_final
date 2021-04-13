@@ -1,3 +1,3 @@
 key,parentID,published,productSKU,productName,productDescription,productBrand,productCategory,productPrice,productPriceUnit,productColour,productLaunchDate,airbagCount,productEngine,productLength,proudctLengthUnit,isProductActive,DBName,DBMileage,DBMileageUnit,DBMaxLoadCapacity,DBMaxLoadCapacityUnit,DBWheelCount,DBBatteryCapacity,DBBatteryCapacityUnit,DBSunroof,DBFuelType,imgArr
-importedProduct1,4,true,1015,prod1,prod1_description,BrandName1,Sedan,1234,INR,red,23-10-2020,5,v12,144,cm,1,ElectricCar,24.5,Whpm,NA,NA,NA,265,kWh,1,NA,"carimg01.jpeg,carimg02.jpeg"
-importedProduct2,4,true,1016,prod2,prod2_description,BrandName1,importedProduct2,1456,INR,blue,25-12-2020,5,v6,124,cm,1,CombustionCar,18.5,kmpl,NA,NA,NA,NA,NA,1,Petrol,"carimg02.jpeg,carimg03.jpeg,carimg01.jpeg"
+importedProduct5,4,true,1019,prod5,prod5_description,BrandName1,Sedan,1234,INR,red,23-10-2020,5,v12,144,cm,1,ElectricCar,24.5,Whpm,NA,NA,NA,265,kWh,1,NA,"carimg01.jpeg,carimg02.jpeg"
+importedProduct6,4,true,1020,prod6,prod6_description,BrandName1,Sedan,1456,INR,blue,25-12-2020,5,v6,124,cm,1,CombustionCar,18.5,kmpl,NA,NA,NA,NA,NA,1,Petrol,"carimg02.jpeg,carimg03.jpeg,carimg01.jpeg"
