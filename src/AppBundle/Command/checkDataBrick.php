@@ -10,7 +10,8 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Pimcore\Model\DataObject;
-
+use Pimcore\Tool\Session;
+use Pimcore\Model\Notification\Service\UserService;
 
 class checkDataBrick extends AbstractCommand
 {
@@ -120,6 +121,7 @@ class checkDataBrick extends AbstractCommand
                 p_r($da->getProductName());
             }
 
+            
             
 
     }

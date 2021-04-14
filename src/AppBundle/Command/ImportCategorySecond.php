@@ -15,12 +15,12 @@ use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
 use Pimcore\Model\Notification\Service\NotificationService;
 
-class ImportCSVData extends AbstractCommand
+class ImportCategorySecond extends AbstractCommand
 {
     protected function configure()
     {
         $this
-            ->setName('import:csv_category')
+            ->setName('import:csv_category_second')
             ->setDescription('command to import data for category class from csv file')
             ->addOption("file","f", InputOption::VALUE_REQUIRED,"Pass file path"); 
 
@@ -134,12 +134,6 @@ class ImportCSVData extends AbstractCommand
                     p_r("missing values in row  , reffer to categoryImport  logs for missing fields ! ABORTING.......");
                     $notificationService->sendToUser(2,0, 'ERROR','file not imported !! some missing values . Check log file');
                     $logg= \Pimcore\Log\Simple::log($name,"STATUS:  FAILED to Import  , REASON :\n".$errorMessage);
-                    $mail = new \Pimcore\Mail();
-                    $mail->addTo('wanderlust.we.009@gmail.com');           //admin 
-                    $mail->setSubject('Data Import Failed');
-                    $mail->setDocument('/emailFail');
-                     // $mail->setParams($params);
-                    $mail->send();
                 }
                 else
                 {
@@ -164,15 +158,8 @@ class ImportCSVData extends AbstractCommand
                         $obj->setCategoryUpdatedAt($mcategoryUpdateAt);
                         $obj->setPublished($mpublished);
                         $obj->save();
-
-                        
                     }
-                    $mail = new \Pimcore\Mail();
-                    $mail->addTo('wanderlust.we.009@gmail.com');           //admin 
-                    $mail->setSubject('Data Imported successfully');
-                    $mail->setDocument('/emailSuccess');
-                     // $mail->setParams($params);
-                    $mail->send();
+
                     p_r("Imported Data SUCESSFULLY");
                     $notificationService->sendToUser(2,0, 'SUCCESS','Data imorted sucessfully');
                     $logg= \Pimcore\Log\Simple::log($name,"STATUS : SUCCESS  , Imported Data Sucessfully");

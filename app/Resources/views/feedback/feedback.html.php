@@ -268,6 +268,13 @@ if(isset($_POST['sub']) and $_POST['sub'])
         $obj->save();
 
         echo "<div class=\"alert_green\"> <span class=\"closebtn\" onclick=\"this.parentElement.style.display='none';\">&times;</span> feedback submited successfuly</div>";
+
+        $mail = new \Pimcore\Mail();
+        $mail->addTo('wanderlust.we.009@gmail.com');           //admin 
+        $mail->setSubject('Feedback Received ');
+        $mail->setDocument('/emailFeedback');
+         // $mail->setParams($params);
+        $mail->send();
     }
     else
     {

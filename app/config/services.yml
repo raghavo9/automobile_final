@@ -23,6 +23,13 @@ services:
     AppBundle\EventListener\airbagListener:
         tags:
             - { name: kernel.event_listener, event: pimcore.dataobject.preUpdate, method: onPreUpdate  }
+            - { name: kernel.event_listener, event: pimcore.dataobject.preUpdate, method: updatedAtTime  }
+            - { name: kernel.event_listener, event: pimcore.dataobject.preAdd, method: createdAtCheck  }
+            - { name: kernel.event_listener, event: pimcore.dataobject.preUpdate, method: productLengthCheck  }
+            - { name: kernel.event_listener, event: pimcore.dataobject.preAdd, method: productLengthCheck  }
+            - { name: kernel.event_listener, event: pimcore.dataobject.preUpdate, method: productPriceCheck  }
+            
+
     
     
               
