@@ -1,3 +1,9 @@
 key,parentID,published,categoryName,categoryDescription,isCategoryActive
-importedProduct1,3,true,hatchback,beautiful passenger car,1
-importedProduct2,3,true,van,beautiful passenger van,1
+Hatchback,3,true,Hatchback,This type of car is a small car with a rear door which opens upwards revealing the boot space to keep your luggage. Excluding the rear door hatchbacks are built with four-doors while two-door hatchbacks are also available in the market.,1
+Sedan,3,true,Sedan,The main feature of a sedan is that it is designed with separate passenger and boot space. Sedans feature four-doors and a boot or trunk. A sedan is designed as a 3-box configuration vehicle — engine passenger and cargo.,1
+Compact Sedan,3,true,Compact Sedan,The Indian car market is complex and the needs of customers are sometimes different compared to other countries. One such is the compact cars. These cars measure less than four-metres in length and enjoy tax benefits from the Indian government.,1
+Coupe,3,true,Coupe,A coupe is a two-door car with a sloping roofline giving it a sporty stance. Most of these coupes come with a powerful engine and feature two-seats or come with smaller rear seats.,1
+Minivan,3,true,Minivan,MPV or Multi-Purpose Vehicles are people carriers and designed to offer more space and seats with either two three or more rows of seating. This type of vehicle is also called MUV (Multi-Utility Vehicle).,1
+SUV,3,true,SUV,SUVs are built with the combination of passenger cars with features of off-road vehicles. This includes higher ground clearance four-wheel drive and other off-roading capabilities. SUVs are large in size with big wheels and boast of different terrain capabilities. ,1
+Truck,3,true,Truck,Truck also called lorry any motor vehicle designed to carry freight or goods or to perform special services such as fire fighting. The truck was derived from horse-driven wagon technology,1
+Van,3,true,Van,A van is a type of road vehicle used for transporting goods or people. Depending on the type of van .it can be bigger or smaller than a truck and SUV, and bigger than a common car.,1

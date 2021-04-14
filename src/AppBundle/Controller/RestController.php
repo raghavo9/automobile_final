@@ -27,7 +27,7 @@ class RestController extends Pimcore\Bundle\AdminBundle\Controller\Rest\Abstract
 
         $data = json_decode($request->getContent(), true);
 
-        dump($data);
+        //dump($data);
         $cdate=date_create()->format('d-m-Y');
         $ndate = new DateTime($cdate);
         $rowNumber =0;
@@ -137,7 +137,7 @@ class RestController extends Pimcore\Bundle\AdminBundle\Controller\Rest\Abstract
         $this->checkPermission('objects');
         $data = json_decode($request->getContent(), true);
         
-        dump($data);
+        //dump($data);
         $rowNumber =0;
         $errorMessage = "";
         $errorCount=0;
@@ -252,7 +252,7 @@ class RestController extends Pimcore\Bundle\AdminBundle\Controller\Rest\Abstract
         $this->checkPermission('objects');
         $data = json_decode($request->getContent(), true);
 
-        dump($data);
+        //dump($data);
         $errorCount = 0;
         $errorMessage = "";
         $rowNumber =0;
