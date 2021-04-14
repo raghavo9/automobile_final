@@ -90,9 +90,10 @@ class airbagListener
             $obj = $e->getObject();
             
             $createdValue = $obj->getCategoryCreatedAt();
-            $cdate=date_create()->format('d-m-Y');
+            //$cdate=date_create()->format('d-m-Y');
+            $today = date("d-m-Y");
 
-            if($createdValue > $cdate)
+            if($createdValue > $today)
             {
                 throw new \Pimcore\Model\Element\ValidationException("created At cannot be greater than present date");
             }
@@ -103,9 +104,10 @@ class airbagListener
             $obj = $e->getObject();
             
             $createdValue = $obj->getBrandCreatedAt();
-            $cdate=date_create()->format('d-m-Y');
+            $today = date("d-m-Y");
+            
 
-            if($createdValue > $cdate)
+            if($createdValue > $today)
             {
                 throw new \Pimcore\Model\Element\ValidationException("created At cannot be greater than present date");
             }
@@ -116,9 +118,10 @@ class airbagListener
             $obj = $e->getObject();
             
             $createdValue = $obj->getProductCreatedAt();
-            $cdate=date_create()->format('d-m-Y');
+            
+            $today = date("d-m-Y");
 
-            if($createdValue > $cdate)
+            if($createdValue > $today)
             {
                 throw new \Pimcore\Model\Element\ValidationException("created At cannot be greater than present date");
             }

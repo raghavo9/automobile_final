@@ -121,7 +121,19 @@ class checkDataBrick extends AbstractCommand
                 p_r($da->getProductName());
             }
 
-            
+            $myObj= new \Pimcore\Model\DataObject\Category\Listing();
+            foreach($myObj as $s)
+            {
+                $today = date("d-m-Y");
+                $createdValue = $s->getCategoryCreatedAt();
+                if($createdValue > $today)
+                {
+                    //throw new \Pimcore\Model\Element\ValidationException("created At cannot be greater than present date");
+                    p_r("value is true");
+                }
+                break;
+
+            }
             
 
     }
