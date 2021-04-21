@@ -31,4 +31,12 @@ class HomeController extends FrontendController
     {
 
     }
+    public function nproductAction(Request $request)
+    {
+
+    }
+    public function nproductDetailAction(Request $request)
+    {
+
+    }
 }

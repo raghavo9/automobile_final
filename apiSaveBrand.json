@@ -6,7 +6,7 @@
 		"brandName":"api_SavedBrand01",
 		"brandDescription":"apiSavedBrandDesciption01",
 		"isBrandActive":1,
-		"brandLogo":"carlogo01.jpeg"
+		"brandLogo":"ford.jpeg"
 	},
 	{
 		"key":"apiSavedBrand02",
@@ -15,6 +15,6 @@
 		"brandName":"api_SavedBrand02",
 		"brandDescription":"apiSavedBrandDesciption02",
 		"isBrandActive":1,
-		"brandLogo":"carlogo01.jpeg"
+		"brandLogo":"honda.jpeg"
 	}
 ]

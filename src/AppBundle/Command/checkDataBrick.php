@@ -50,7 +50,7 @@ class checkDataBrick extends AbstractCommand
                     break;
                 }
             }
-            //p_r($productType);
+            p_r($productType);
 
 
 
@@ -92,7 +92,7 @@ class checkDataBrick extends AbstractCommand
             //p_r();
             //p_r();
 
-            break;
+            //break;
         }
         
         //$var = sprintf(

@@ -1,0 +1,3 @@
+key,parentID,published,categoryName,categoryDescription,isCategoryActive
+impCat01,3,true,impCat01,impCat01 Description ,1
+impCat02,3,true,impCat02,impCat02 Description ,1
